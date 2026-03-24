@@ -1,58 +1,39 @@
-//simple type declaration
-let myName = 'Peter';
-// union typ
-let album;
-// any typ kills typescript
-let age;
-// function with type safe arguments and output
-const Sum = (a, b) => {
+// literal types
+let myName;
+let userStatus;
+// functions
+// function with return value
+const add = (a, b) => {
     return a + b;
 };
-// Arrays
-let namesArray = ['luffy', 'nami', 'zoro'];
-let mixedArray = [42, 'Spandam', false];
-// Tuple -> more strict (number of items and order matter)
-let Tuple = ['peter', 42, true];
-// Objects
-let myObj;
-myObj = [];
-console.log(typeof myObj);
-const User = {
-    userName: 'eberwild',
-    userEmail: 'myNotWorkingArcorEmail',
-    age: 31,
-    hasPremium: true,
+// function with no return value
+const logMsg = (message) => {
+    console.log(message);
 };
-const luffy = {
-    name: 'luffy',
-    crewName: 'strawhats',
-    role: 'captain',
-    bounty: 300000000,
-    //active: true,
-    crew: []
+// interface mathFunction {
+//  (a: number, b:number): number
+//}
+const sub = function (x, y) {
+    return x - y;
 };
-const getBounty = (pirate) => {
-    return pirate.bounty;
+// optional parameters
+const addAll = (a, b, c) => {
+    return typeof c === 'undefined' ?
+        a + b
+        :
+            a + b + c;
 };
-const garp = {
-    name: 'garp',
-    rang: 'vice-admiral',
-    active: true,
-    crew: []
+// default parameters
+const sumAll = (a, b, c = 2) => {
+    return a + b + c;
 };
-const getRang = (marine) => {
-    return marine.rang;
+// Rest parameters
+const total = (...nums) => {
+    nums.reduce((prev, curr) => prev + curr);
 };
-// Enums -> every value enumareted
-var Grade;
-(function (Grade) {
-    Grade[Grade["U"] = 1] = "U";
-    // all following values will adapted 
-    Grade[Grade["D"] = 2] = "D";
-    Grade[Grade["C"] = 3] = "C";
-    Grade[Grade["B"] = 4] = "B";
-    Grade[Grade["A"] = 5] = "A";
-})(Grade || (Grade = {}));
-console.log(Grade.A);
+// Never type -> function that throw an error or infinite loops in functions
+const createError = (message) => {
+    throw new Error(message);
+};
 export {};
 //# sourceMappingURL=main.js.map

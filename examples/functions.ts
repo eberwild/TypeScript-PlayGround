@@ -1,10 +1,3 @@
-type vacation = {
-    place: string,
-    price: number,
-    member: string[],
-    booked: boolean
-}
-
 // literal types
 let myName: 'Peter';
 let userStatus : 'active' | 'idle' | 'inactive';
