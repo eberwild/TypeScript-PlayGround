@@ -45,7 +45,5 @@
     "skipLibCheck": true,
   },
   // only watch ts files inside src folder
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*"]
 }
