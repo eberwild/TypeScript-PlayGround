@@ -8,3 +8,6 @@ let age: any;
 const Sum = (a:number,b:number):number => {
     return a+b;
 }
+
+// any -> TypeScript trusts us completely (no type checking)
+// unknown -> TypeScript requires US to check the type before using it
