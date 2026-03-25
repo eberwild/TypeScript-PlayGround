@@ -1,44 +1,36 @@
-class Coder {
-    name;
-    music;
-    age;
-    lang;
-    constructor(name, music, age, 
-    // default value
-    lang = 'Typescript') {
-        this.name = name;
-        this.music = music;
-        this.age = age;
-        this.lang = lang;
-        this.name = name;
-        this.music = music;
-        this.age = age;
-        this.lang = lang;
+// index signatures
+// helps us to access dynamic properties of an object
+const todaysTransactions = {
+    Pizza: -10,
+    Job: 50,
+    Sell: 20
+};
+const todaysTotal = (transactions) => {
+    let total = 0;
+    for (const transaction in transactions) {
+        total = total + transactions[transaction];
     }
-    getAge() {
-        return this.age;
-    }
+    return total;
+};
+console.log(todaysTotal(todaysTransactions));
+const student = {
+    name: 'Anna',
+    GPA: 2.5,
+    classes: [134, 741]
+};
+for (const key in student) {
+    console.log(`${key}: ${student[key]}`);
 }
-// public -> can be accesed everywhere
-// private -> can only be accesed inside this class
-// protected -> can be accesed in the class or in subclasses
-const Anna = new Coder('Anna', 'Rock', 28);
-// age = private -> still valid JS code so it we be printed to the console
-//console.log(Anna.age);
-// Webdev as a subclass for Coder class
-class Webdev extends Coder {
-    computer;
-    constructor(computer, name, music, age) {
-        super(name, music, age);
-        this.computer = computer;
-        this.computer = computer;
-    }
-    // cause its protected we can access lang here inside the subclass
-    getLang() {
-        return this.lang;
-    }
-}
-const Yasemin = new Webdev('Lenovo', 'Yasemin', 'EDM', 28);
-console.log(Yasemin.getLang());
+// Object.keys -> [name, GPA, classes]
+Object.keys(student).map(key => {
+    console.log(key);
+});
+const monthlyIncome = {
+    salary: 600,
+    tip: 250,
+    sidehustle: 200
+};
 export {};
+//----------------------------------------------------------------------------------//
+//mapped types -> a record is just a already build mapped type!
 //# sourceMappingURL=main.js.map
